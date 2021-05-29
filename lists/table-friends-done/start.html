@@ -36,14 +36,17 @@
 <body>
 
   <div id="app">
+    <h1>Carlos App</h1>
     <table>
       <thead>
         <tr>
+          <th>ID</th>
           <th>Name</th>
           <th>Username</th>
           <th>Link</th>
           <tbody>
-            <tr v-for="friend in friends" :key="friend.username">
+            <tr v-for="(friend, index) in friends" :key="friend.username">
+              <td> {{ index + 1 }} </td>
               <td> {{ friend.name }} </td>
               <td> {{ friend.username }} </td>
               <td> <a :href="'https://twitter.com/' + friend.username">@{{ friend.username }} </a></td>
