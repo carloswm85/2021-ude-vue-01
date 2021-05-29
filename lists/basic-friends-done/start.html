@@ -8,50 +8,16 @@
   <title>Twitter Friends</title>
   <!-- development version, includes helpful console warnings -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <style>
-    table {
-      border: none;
-      margin: 0;
-      padding: 0;
-      border-collapse: collapse;
-    }
-
-    th {
-      text-align: left;
-    }
-
-    td {
-      margin: 0;
-      padding: 4px;
-      font-size: 13px
-    }
-
-    tr:nth-child(even) {
-      background-color: rgb(230, 230, 230);
-    }
-
-  </style>
 </head>
 
 <body>
 
   <div id="app">
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Username</th>
-          <th>Link</th>
-          <tbody>
-            <tr v-for="friend in friends" :key="friend.username">
-              <td> {{ friend.name }} </td>
-              <td> {{ friend.username }} </td>
-              <td> <a :href="'https://twitter.com/' + friend.username">@{{ friend.username }} </a></td>
-            </tr>
-          </tbody>
-        </tr>
-      </thead>
-    </table>
+    <ul>
+      <li v-for="friend in friends" :key="friend.username">
+        {{ friend.name }} - {{ friend.username }}
+      </li>
+    </ul>
   </div>
 
   <script>
